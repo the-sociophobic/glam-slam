@@ -10,7 +10,7 @@ export default async (model: any, debug?: boolean) =>
         gltf =>
           res(gltf),
           (progress: any) => {
-            console.log('progress: ', progress)
+            // console.log('progress: ', progress)
             // const url = progress.srcElement.responseURL.split('/')
             // const name = url[url.length - 1].split('.')
   

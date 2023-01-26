@@ -7,6 +7,7 @@ import {
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 import isProd from '../utils/isProd'
 import TransitionsHandler from './handlers/TransitionsHandler'
@@ -27,6 +28,7 @@ class Scene extends TransitionsHandler {
     this.scene = {
       renderer: undefined,
       camera: undefined,
+      controls: undefined,
       scene: new ThreeScene(),
       composer: undefined,
 
@@ -60,7 +62,11 @@ class Scene extends TransitionsHandler {
       0.1,
       1000
     )
-    this.scene.camera.position.set(0, 100, 30)
+    this.scene.controls = new OrbitControls(this.scene.camera, this.scene.renderer.domElement)
+    this.scene.controls.enabled = false
+    this.scene.camera.position.set(0, 138, 30)
+    this.scene.controls.target.set(0, 125, 0)
+    this.scene.controls.update()
 
     this.scene.composer = new EffectComposer(this.scene.renderer)
     this.scene.composer.addPass(new RenderPass(this.scene.scene, this.scene.camera))
@@ -187,6 +193,18 @@ class Scene extends TransitionsHandler {
     this.disposeUnits()
     this.scene.unitsToggled = !this.scene.unitsToggled
     this.initUnits()
+  }
+
+  receiveGameData = (props: any) => {
+    const LINE_WIDTH = 7
+    const x_pos = (props.line - 1.5) * LINE_WIDTH
+
+    if (this.scene.camera && this.scene.units.char.model) {
+      this.scene.units.char.model.position.x = x_pos
+      this.scene.camera.position.x = x_pos
+      this.scene.controls.target.x = x_pos
+      this.scene.controls.update()
+    }
   }
 }
 
