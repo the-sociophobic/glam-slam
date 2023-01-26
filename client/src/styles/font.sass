@@ -1,0 +1,75 @@
+@import '~bootstrap/scss/bootstrap.scss'
+
+@font-face
+  font-family: 'Raleway'
+  src: url('./font/Raleway-Regular.ttf') format('truetype')
+  font-weight: normal
+@font-face
+  font-family: 'Raleway'
+  src: url('./font/Raleway-Bold.ttf') format('truetype')
+  font-weight: bold
+
+@mixin font-params($font-size, $line-height, $font-weight: normal, $font-color: $black)
+  font-size: calc($font-size * 1px) !important
+  line-height: calc($line-height * 1px) !important
+  font-weight: $font-weight !important
+  color: $font-color
+
+*
+  font-family: 'Raleway'
+  font-weight: normal
+  color: $black
+  font-size: 16px
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+
+p, a, h1, h2, h3, h4, h5, h6
+  margin: 0 !important
+
+.font-inherit
+  font-family: inherit
+  font-weight: inherit
+  font-size: inherit
+  color: inherit
+  line-height: inherit
+
+.ellipsis
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+.underline
+  text-decoration: underline
+
+.no-select
+  -webkit-touch-callout: none  /* iOS Safari */
+  -webkit-user-select: none    /* Safari */
+  -khtml-user-select: none     /* Konqueror HTML */
+  -moz-user-select: none       /* Firefox */
+  -ms-user-select: none        /* Internet Explorer/Edge */
+  user-select: none            /* Non-prefixed version, currently supported by Chrome and Opera */
+  
+.p
+  &--s
+    @include font-params(12, 16, 500)
+    font-style: italic
+
+.h1
+  @include font-params(24, 30, 800)
+  text-transform: capitalize
+
+.h2
+  @include font-params(64, 80, 800)
+  letter-spacing: -0.04em
+
+.h3
+  @include font-params(19, 30, 800)
+
+.h4
+  @include font-params(17, 22, 800)
+
+.h5
+  @include font-params(12, 15, 800)
+  font-style: italic
