@@ -1,6 +1,7 @@
 import {
   Vector3,
-  PointLight
+  PointLight,
+  HemisphereLight
 } from 'three'
 
 import Unit from '../Unit'
@@ -28,28 +29,31 @@ const lightPos = () =>
 
 export default class Lowpoly extends Unit {
 
-  lights: any[]
+  // lights: any[]
 
   constructor(props: any) {
     super(props)
 
     const { scene } = props
 
-    this.lights = Array
-      .from(
-        { length: numberOfLights },
-        (light, index) => {
-          const tmp = new PointLight(
-            lightColors[index % lightColors.length],
-            5,
-            35
-          )
-          tmp.position.copy(lightPos())
-          scene.add(tmp)
+    // this.lights = Array
+    //   .from(
+    //     { length: numberOfLights },
+    //     (light, index) => {
+    //       const tmp = new PointLight(
+    //         lightColors[index % lightColors.length],
+    //         5,
+    //         35
+    //       )
+    //       tmp.position.copy(lightPos())
+    //       scene.add(tmp)
 
-          return tmp
-        }
-      )
+    //       return tmp
+    //     }
+    //   )
+
+    const sun = new HemisphereLight( 0xffffff, 0xffffff, 2 )
+    scene.add(sun)
 
     props.unitLoaded()
   }

@@ -5,7 +5,7 @@ import hdrLoader from '../../loaders/hdrLoader'
 import HDRMap from './HDRI/bg.hdr'
 
 
-export default class Fence extends Unit {
+class Environment extends Unit {
   constructor(props: any) {
     super(props)
 
@@ -19,7 +19,6 @@ export default class Fence extends Unit {
     this.props.scene.environment.magFilter = THREE.NearestFilter
     this.props.scene.environment.flipY = true
     this.props.scene.environment.exposure = 1.7
-    console.log(this.props.scene.environment)
 
     // console.log(this.props.scene.environment)
     this.props.unitLoaded()
@@ -28,3 +27,6 @@ export default class Fence extends Unit {
   animate = (props?: any) => { }
   dispose = (props?: any) => { }
 }
+
+
+export default Environment

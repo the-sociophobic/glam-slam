@@ -60,12 +60,12 @@ class Scene extends TransitionsHandler {
       0.1,
       1000
     )
-    this.scene.camera.position.z = 30
+    this.scene.camera.position.set(0, 100, 30)
 
     this.scene.composer = new EffectComposer(this.scene.renderer)
     this.scene.composer.addPass(new RenderPass(this.scene.scene, this.scene.camera))
     const glitchPass = new GlitchPass(7000)
-    this.scene.composer.addPass(glitchPass)
+    // this.scene.composer.addPass(glitchPass)
 
     this.initUnits()
 
