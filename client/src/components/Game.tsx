@@ -9,6 +9,7 @@ import Cubes from '../three/units/Cubes'
 import Lights from '../three/units/Lights'
 import Road from '../three/units/Road'
 import Char from '../three/units/Char'
+import Coins from '../three/units/Coins'
 import Environment from '../three/units/Environment'
 import useKeyPress from '../hooks/useKeyPress'
 import { clamp } from 'lodash'
@@ -70,6 +71,10 @@ const Game: React.FC<GamePropsType> = () => {
             },
             char: {
               unit: Char,
+              disabled: false,
+            },
+            coins: {
+              unit: Coins,
               disabled: false,
             },
             // env: {

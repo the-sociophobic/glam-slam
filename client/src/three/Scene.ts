@@ -199,7 +199,7 @@ class Scene extends TransitionsHandler {
     const LINE_WIDTH = 7
     const x_pos = (props.line - 1.5) * LINE_WIDTH
 
-    if (this.scene.camera && this.scene.units.char.model) {
+    if (this.scene.camera && this.scene.units.char?.model) {
       this.scene.units.char.model.position.x = x_pos
       this.scene.camera.position.x = x_pos
       this.scene.controls.target.x = x_pos
