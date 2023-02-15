@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/glam-slam/static/css/main.fe77230e.css",
-    "main.js": "/glam-slam/static/js/main.8777e580.js",
+    "main.js": "/glam-slam/static/js/main.21346c37.js",
     "static/media/hairy-girl.glb": "/glam-slam/static/media/hairy-girl.eb1a61d8c5228f74189e.glb",
     "static/media/Raleway-Regular.ttf": "/glam-slam/static/media/Raleway-Regular.3927fa2a37e6f7f4c7c0.ttf",
     "static/media/Raleway-Bold.ttf": "/glam-slam/static/media/Raleway-Bold.18960343b3da49bfd353.ttf",
@@ -9,10 +9,10 @@
     "static/media/road.glb": "/glam-slam/static/media/road.d28b6a6b2b7be9ae33e7.glb",
     "index.html": "/glam-slam/index.html",
     "main.fe77230e.css.map": "/glam-slam/static/css/main.fe77230e.css.map",
-    "main.8777e580.js.map": "/glam-slam/static/js/main.8777e580.js.map"
+    "main.21346c37.js.map": "/glam-slam/static/js/main.21346c37.js.map"
   },
   "entrypoints": [
     "static/css/main.fe77230e.css",
-    "static/js/main.8777e580.js"
+    "static/js/main.21346c37.js"
   ]
 }
